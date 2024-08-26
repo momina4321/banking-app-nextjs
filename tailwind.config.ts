@@ -12,8 +12,8 @@ const config: Config = {
       serif: ['IBM Plex Serif', 'serif'],
      },
      colors:{
-      'customGray': "#475467"
-
+      'customGray': "#475467",
+      'customblue':'#0179FE',
      }
     
     },
