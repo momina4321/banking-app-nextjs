@@ -1,4 +1,7 @@
+
+import RightSidebar from "../components/righSidebar";
 import Sidebar from "../components/sidebar";
+import SideMenu from "../components/sidemenu";
 
 
 
@@ -8,8 +11,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>){
+
     return(
-        <div className="flex">
+        <div className="flex flex-grow overflow-auto h-full w-full justify-between ">
         <Sidebar/>
-        {children}</div>)
+        {children}
+        <RightSidebar/>
+        </div>)
 }
