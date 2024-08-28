@@ -1,24 +1,34 @@
 import Image from "next/image"
+import { tablecontent, tablecontent1, tablecontent2 } from "@/app/utils/constant"
 
-export default function Table(){
-    const content = [{
-        name:'Spotify', type: 'Subscriptions', status: 'Processing', amount:'-$15.00',date:'Wed 1:00pm', icon: '/spotify.svg'
-    },
-    {
-        name:'Alexa Doe', type: 'Deposit', status: 'Success', amount:'+$88.00',date:'Wed 2:45am',icon:'/alexa.svg'
-    },
-    {
-        name:'Figma', type: 'Income', status: 'Processing', amount:'+$18.99',date:'Tue 6:10pm',icon:'/figma.svg'
-    },
-    {
-        name:'Fresh F&V', type: 'groceries', status: 'Success', amount:'-$88.00',date:'Tue 12:15pm',icon:'/grocery.svg'
-    },
-    {
-        name:'Sam Sulek', type: 'Food', status: 'Declined', amount:'-$40.20',date:'Tue 5:40am',icon:'/sam.svg'
-    },
-]
+
+type Props={
+        bankid:number
+    }
+
+
+export const Table:React.FC<Props>=(bankid)=>{
+    
+    const  getcontent=()=>{
+        if(bankid.bankid===1){
+            return tablecontent
+        }
+        else if (bankid.bankid===2){
+            return tablecontent1
+
+        }
+        else{
+            return tablecontent2
+        }
+    }
+
+    const content=getcontent()
+    
     return(
-        <table className=" table-auto gap-6 ">
+        
+        <div className="overflow-x-auto" > 
+       
+        <table className=" table-auto min-w-full  gap-6 ">
 <thead className="text-left" >
     <tr  className="bg-[#F9FAFB] text-[#475467]  h-[44px] border-b-[1px] border-[#EAECF0] ">
       <th className=" px-[24px] py-[16px]">Transaction</th>
@@ -42,6 +52,6 @@ export default function Table(){
     })}
   
   </tbody>
-        </table>
+        </table></div>
     )
 }

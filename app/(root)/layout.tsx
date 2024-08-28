@@ -1,7 +1,6 @@
 
 import RightSidebar from "../components/righSidebar";
 import Sidebar from "../components/sidebar";
-import SideMenu from "../components/sidemenu";
 
 
 
@@ -13,7 +12,7 @@ export default function RootLayout({
 }>){
 
     return(
-        <div className="flex flex-grow overflow-auto h-full w-full justify-between ">
+        <div className="relative flex flex-grow  ">
         <Sidebar/>
         {children}
         <RightSidebar/>

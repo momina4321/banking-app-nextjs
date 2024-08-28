@@ -17,6 +17,8 @@ const navlinks = [
 export default function Sidebar() {
     const pathname = usePathname();
     const [search, setSearch] = useState("")
+    const [isOpen, setIsOpen] = useState(false)
+
 
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -25,41 +27,58 @@ export default function Sidebar() {
 
     const filteredLinks = navlinks.filter(link =>
         link.name.toLowerCase().includes(search.toLowerCase())
-      );
+    );
 
     return (
 
-    
-        <div className={`items-stretch hidden  lg:flex flex-col  w-[250px] pt-8 border-r-[#EAECF0] border-r-[1px] gap-6 `  }> {/* sidebar container  */}
 
 
 
+        <div className=" fixed left-0 top-0 lg:relative  flex-shrink-0  border-b-[1px]  border-r-[1px]" >
 
-            <div className="flex px-5 gap-1" >
-                <Image src="/logo.svg" width={33} height={32} alt="logo"></Image>
-                <p className="text-2xl lg:text-3xl font-bold font-serif" >Horizon</p>
-            </div> {/*logo container ends here  */}
-
-            <div className="relative flex gap-2 px-[24px]" >
-                <Image src="/search-lg.svg" alt="search" width={20} height={20} className="absolute top-3 left-[35px]" ></Image>
-                <input value={search} onChange={handleChange} className="w-full h-11 py-[10px] pr-[14px] rounded-lg border border-[#D0D5DD] pl-10 " placeholder="Search">
-
-                </input>
-            </div> {/** end search container */}
-            <div className="flex flex-col px-4  gap-1" > {/** navigation links container  */}
-                { filteredLinks.map((link, index) => {
-                    const isActive = pathname === (link.href)
-                    return (
-                        <Link key={index} href={link.href} className={isActive ? "bg-[#0179FE] items-center text-[16px] flex gap-2 py-4 px-3 text-white  font-semibold rounded-md " : "items-center text-[16px] flex gap-2 py-4 px-3  font-semibold "} >
-                            <Image width={24} height={24} src={link.icon} alt={link.name} className={isActive ? "brightness-[3] invert-0" : ""} ></Image>
-                            {link.name}</Link>
-                    )
-                }
-                )}
-
+            <div className="flex px-5 fixed left-0 top-3 lg:relative justify-between lg:pt-[32px] min-w-[12px]  " >
+                {!isOpen ? (<button onClick={() => { setIsOpen(true) }} ><Image src="/menu-icon.svg" width={30} height={30} alt="menu" /> </button>) :
+                    (<button onClick={() => { setIsOpen(false) }} ><Image src="/cross.svg" width={20} height={20} alt="cross" /></button>)}
 
             </div>
-            <SideFooter/>
+
+            {isOpen &&
+                <div className={`  bg-white lg:bg-transparent lg:relative flex flex-col border-r-[#EAECF0] w-[200px]  md:w-[270px] pt-8 gap-6 `}  > {/* sidebar container  */}
+
+
+
+
+                    <div className="flex px-5 gap-1" >
+                        <Image src="/logo.svg" width={33} height={32} alt="logo"></Image>
+                        <p className="text-2xl lg:text-3xl font-bold font-serif" >Horizon</p>
+                    </div> {/*logo container ends here  */}
+
+                    <div className="relative flex gap-2 px-[24px]" >
+                        <Image src="/search-lg.svg" alt="search" width={20} height={20} className="absolute top-3 left-[35px]" ></Image>
+                        <input value={search} onChange={handleChange} className="w-full h-11 py-[10px] pr-[14px] rounded-lg border border-[#D0D5DD] pl-10 " placeholder="Search">
+
+                        </input>
+                    </div> {/** end search container */}
+                    <div className="flex flex-col px-4  gap-1" > {/** navigation links container  */}
+                        {filteredLinks.map((link, index) => {
+                            const isActive = pathname === (link.href)
+                            return (
+                                <Link key={index} href={link.href} className={isActive ? "bg-[#0179FE] items-center text-[16px] flex gap-2 py-4 px-3 text-white  font-semibold rounded-md " : "items-center text-[16px] flex gap-2 py-4 px-3  font-semibold "} >
+                                    <Image width={24} height={24} src={link.icon} alt={link.name} className={isActive ? "brightness-[3] invert-0" : ""} ></Image>
+                                    {link.name}</Link>
+                            )
+                        }
+                        )}
+
+
+                    </div>
+
+                    <SideFooter />
+                </div>
+
+
+
+            }
         </div>
     )
 

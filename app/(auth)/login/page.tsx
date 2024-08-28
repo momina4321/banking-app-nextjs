@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function Login() {
 
     return    <div className="flex flex-col justify-center items-center w-1/2 "> {/*login div   */}
-            <div className="flex flex-col w-[360px] gap-10"> {/** login container  */}
+            <div className="flex flex-col max-w-[360px] gap-10"> {/** login container  */}
                 <div className="flex gap-1 " >
                     <Image src="/logo.svg" width={33} height={32} alt="logo"></Image>
                     <p className="text-3xl font-bold font-serif" >Horizon</p>
