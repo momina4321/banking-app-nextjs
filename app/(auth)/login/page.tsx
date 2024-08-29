@@ -61,7 +61,7 @@ export default function Login() {
             </form>
 
             <div className="flex justify-center gap-1" >
-                <p className="hidden md:flex">  Don't have an account?</p> <a className="text-[#1A73E9] font-semibold" href="/register">Sign up</a>
+                <p className="hidden md:flex">  Don&apos;t have an account?</p> <a className="text-[#1A73E9] font-semibold" href="/register">Sign up</a>
             </div>
         </div>
 
