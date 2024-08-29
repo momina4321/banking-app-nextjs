@@ -19,14 +19,6 @@ export default function Register() {
     const [password, setPassword] = useState("")
     const router = useRouter()
 
-
-    useEffect(() => {
-        const user = getUser()
-        if (user) {
-            router.push('/')
-        }
-    }, [router])
-
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
     const validatePassword = (pw: string) => {

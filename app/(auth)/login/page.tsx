@@ -11,12 +11,7 @@ export default function Login() {
     const [error, setError] = useState("")
     const router = useRouter()
 
-    useEffect(() => {
-        const user = getUser()
-        if (user) {
-            router.push('/')
-        }
-    }, [router])
+
 
 
     const onFormSubmit = (e: React.FormEvent) => {
