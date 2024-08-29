@@ -14,15 +14,15 @@ export default function SideFooter() {
     }
 
     return (
-        <div className="flex px-5 items-center justify-between py-6 border-t-2 border-[#EAECF0] mt-auto">
+        <div className="flex px-5  justify-between py-6 border-t-2 border-[#EAECF0] mt-auto">
             <div className="flex gap-2 justify-between">
             <Image src="/jsmastery.svg" width={40} height={40} alt="js" />
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col  gap-1">
                 <div className=" flex font-semibold">{user.fname} {user.lname}</div>
-                <div className="lg:flex  hidden text-[#475467]">{user.email}</div>
+                <div className="flex   text-[#475467]">{user.email}</div>
             </div>
             </div>
-            <div className="flex flex-col  ">
+            <div className="flex pb-6 lg:pb-0 ">
 
                 <button onClick={() => userLogout()} >
                     <Image src="/log-out-01.svg" width={20} height={20} alt="logout" />
