@@ -1,9 +1,9 @@
 "use client"
-
-import { banks } from "@/app/utils/constant";
-import { Dropdown } from "./dropdown";
+import { banks } from "@/app/utils/constant"
+import { Dropdown } from "./dropdown"
 
 export default function PaymentForm() {
+
     return (
         <div className="flex flex-col gap-[24px]  ">
             <form className="" >
@@ -20,7 +20,7 @@ export default function PaymentForm() {
                         <div className="font-medium  hidden lg:flex text-sm text-[#475467]" > Please provide any additional information or instructions related to the transfer </div>
                     </div>
 
-                    <textarea className="max-w-[512px]  py-[10px] px-[14px] rounded-lg border border-[#D0D5DD]"  placeholder="Write a note"></textarea>
+                    <textarea className="max-w-[512px]  py-[10px] px-[14px] rounded-lg border border-[#D0D5DD]" placeholder="Write a note"></textarea>
                 </div>
 
                 <div className="py-[40px] flex flex-col gap-[5px]  border-b-2 border-[#EAECF0] " >
@@ -47,7 +47,6 @@ export default function PaymentForm() {
                 </div>
                 <button className="bg-[#1A73E9] text-white w-full h-11 py-[10px] px-[18px] rounded-lg "> Transfer funds </button>
             </form>
-            
         </div>
     )
 }
