@@ -30,6 +30,7 @@ export default function Login() {
      
       const user = getUser()
 
+      if (user){
       if (email === user.email && password === user.password ) {
         // Authentication successful
         router.push('/')
@@ -37,6 +38,10 @@ export default function Login() {
         // Authentication failed
         setError('Invalid username or password.');
       }
+    }else{
+        setError('Invalid username or password.');
+
+    }
 
     }
 
