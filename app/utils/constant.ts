@@ -1,10 +1,10 @@
 export const banks = [{
-    name: 'Chase Bank', savings: '$2,588.12', id: 1,
+    name: 'Chase Bank', savings: '$2,588.12', id: 1, tag:'CB'
 }, {
-    name: 'Bank of America', savings: '$3,288.11', id: 2,
+    name: 'Bank of America', savings: '$3,288.11', id: 2, tag:'BA'
 },
 {
-    name: 'First Platypus Bank', savings: '$1,208.14', id: 3,
+    name: 'First Platypus Bank', savings: '$1,208.14', id: 3, tag:'PB'
 },
 
 ]

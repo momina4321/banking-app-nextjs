@@ -4,14 +4,19 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
+import { getUser } from "../utils/auth"
+import { banks } from "../utils/constant"
 
 export default function RightSidebar() {
 
+    const cardslength = banks.length;
+
     const [isOpen, setIsOpen] = useState(false)
+    const user = getUser()
 
     return (
 
-        <div className="flex-shrink-0  items-stretch " >
+        <div className="flex-shrink-0 " >
 
             {!isOpen && (
 
@@ -20,7 +25,7 @@ export default function RightSidebar() {
             }
 
             {isOpen &&
-                <div className="fixed right-0  overflow-x-hidden h-full  bg-white lg:bg-transparent  -top-2 z-50  lg:relative flex flex-col w-[290px]  lg:w-[390px] pb-[32px] border-l-[1px] border-[#EAECF0] gap-8  ">
+                <div className="fixed h-screen right-0  items-stretch overflow-x-hidden  bg-white  w-[290px]  -top-2    flex flex-col  lg:w-[390px] pb-[32px] border-l-[1px] border-[#EAECF0] gap-8  ">
 
                     <Image src="/rightside.svg" width={392} height={120} alt="rightimg" />
                     <button onClick={() => setIsOpen(false)} >
@@ -28,14 +33,15 @@ export default function RightSidebar() {
                     </button>
                     <div className="flex flex-col gap-6 px-[25px] " >
                         <Image src="/jsmastery.svg" className="absolute  top-10 lg:top-20 lg:left-3 " width={96} height={96} alt="pfp" />
-                        <div className="flex flex-col gap-1 " ><div className="font-semibold text-xl md:text-2xl" > Adrian Hajdin</div><div className="text-[#475467] text-[16px]" >adrian@jsmastery.pro</div> </div>
+                        <div className="flex flex-col gap-1 " ><div className="font-semibold text-xl md:text-2xl" >{user.fname} {user.lname}</div><div className="text-[#475467] text-[16px]" >{user.email}</div> </div>
 
                         <div className="flex justify-between  items-center">
 
-                            <div className="font-semibold text-lg" >My Banks</div>
-                            <Link className="flex gap-3 text-customblue font-semibold" href="" ><Image src="./plus.svg" width={20} height={20} alt="addicon" /> Add Bank</Link>
+                            <div className="font-semibold text-base lg:text-lg" >My Banks</div>
+                            <Link className="flex gap-3 text-customblue font-semibold  " href="" ><Image src="./plus.svg" width={20} height={20} alt="addicon" /><p className="hidden lg:block" >Add Bank</p> </Link>
                         </div>
-
+                   
+                   
                         <div className="flex flex-col lg:w-[400px] w-[200px]" >
                             <Image src="/Cards.svg" width={344} height={222} alt="cards" />
 
@@ -48,7 +54,7 @@ export default function RightSidebar() {
 
                         <div className="flex justify-between items-center  ">
 
-                            <div className="font-semibold text-lg" >My Budgets</div>
+                            <div className="font-semibold text-base lg:text-lg" >My Budgets</div>
                             <button ><Image src="./dots-vertical.svg" width={20} height={20} alt="dropdown" /> </button>
                         </div>
 

@@ -40,7 +40,7 @@ export default function PaymentForm() {
                     <input type="text" required className="max-w-[512px]  py-[10px] px-[14px] rounded-lg border border-[#D0D5DD]" placeholder="Enter the account number" ></input>
                 </div>
 
-                <div className="lg:flex-row flex flex-col gap-5 lg:gap-24 border-b-2 border-[#EAECF0]  py-[40px] " >
+                <div className="lg:flex-row flex flex-col gap-5 lg:gap-24  border-[#EAECF0]  py-[40px] " >
                     <label className="w-[280px] flex font-medium text-[#344054] text-lg">Amount  </label>
 
                     <input type="number" required className="  max-w-[512px] py-[10px] px-[14px] rounded-lg border border-[#D0D5DD]" placeholder="Enter amount" ></input>

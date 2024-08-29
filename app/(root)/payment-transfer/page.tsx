@@ -1,7 +1,7 @@
 import PaymentForm from "@/app/components/ui/payment-form";
 
 export default function PaymentTransfer() {
-    return <div className=" py-[48px] px-[32px]  gap-[32px] flex flex-col w-full">
+    return <div className=" py-[48px] px-[32px]  gap-[32px] flex flex-col w-full ">
         <div className="flex flex-col  gap-5"> {/**heading and description */}
             <div className="flex font-semibold text-xl lg:text-3xl gap-2">
                 <div>   Payment Transfer</div>

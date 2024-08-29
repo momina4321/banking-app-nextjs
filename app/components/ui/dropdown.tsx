@@ -7,6 +7,7 @@ type Bank = {
     name: string;
     savings: string;
     id: number;
+    tag:string
 }
 
 type Props = {

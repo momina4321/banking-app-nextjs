@@ -2,23 +2,35 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Table } from "../components/ui/table";
 import { banks } from "../utils/constant";
+import { getUser } from "../utils/auth";
 
 
 
 export default function Homepage() {
 
-   
+   type banks = {
+    id: number, name:string, tag:string,savings:string
+   }
 
     const [activeTab, setactiveTab] = useState(1)
+    const [bank,setBank] = useState(banks[0])
 
+    const banksinfo =(bank:banks)=>{
+        setactiveTab(bank.id)
+        setBank(bank)
+    }
 
-    return <div className="  py-[48px] px-[32px]  gap-[32px] flex flex-col lg:w-full overflow-x-auto  "> {/**homepage */}
+    const user=getUser()
+    
+    
+
+    return  <div className="  py-12 px-8  gap-8 flex flex-col max-w-full  "> {/**homepage */}
         <div className="flex flex-col  gap-5"> {/**heading and description */}
             <div className="flex font-semibold text-xl lg:text-3xl gap-2">
-                <div>   Welcome, </div><div className="text-customblue"> Adrian</div>
+                <div>   Welcome, </div><div className="text-customblue"> {user.fname} {user.lname} </div>
 
             </div>
             <div className="font-medium  hidden lg:flex text-[16px] text-customGray">Access & manage your account and transactions efficiently.</div>
@@ -56,34 +68,30 @@ export default function Homepage() {
             <div className="flex gap-4 border-b-[1px] border-[#EAECF0]  ">
                 {banks.map((bank) => {
 
-                    return (<button key={bank.id} onClick={() => { setactiveTab(bank.id) }} className={activeTab === bank.id ? "px-1 border-b-[3px] pb-[10px] border-customblue  text-customblue font-semibold text-[16px]" : "pb-[12px] px-1 text-customGray font-semibold text-[16px] "}  > {bank.name}  </button>)
+                    return (<button key={bank.id} onClick={() => { banksinfo(bank) }} className={activeTab === bank.id ? "px-1 border-b-[3px] pb-[10px] border-customblue  text-customblue font-semibold text-[16px]" : "pb-[12px] px-1 text-customGray font-semibold text-[16px] "}  > {bank.name}  </button>)
                 })}
             </div>
 
             <div className="flex bg-[#F5FAFF] px-6 py-5 gap-[18px] rounded-lg overflow-hidden items-center">
                 <div className="flex flex-col">
                     <div className="rounded-[50%] bg-customblue text-white width-[40px] height-[40px] p-3">
-                        <div className="font-semibold text-[16px]">   CB</div>
+                        <div className="font-semibold text-[16px]">  {bank.tag}</div>
                     </div>
 
                 </div>
                 <div className="flex flex-col gap-[7px]  w-full">
                     <div className="flex   justify-between">
 
-                        {banks.map((bank) => {
-                            if (bank.id === activeTab) {
-                                return (<div key={bank.id} className="font-semibold text-[#194185] text-xl">{bank.name}</div>)
-                            }
-                        })}
+                      
+                    <div  className="font-semibold text-[#194185] text-xl">{bank.name }</div>
+                       
 
                         <div className="bg-[#ECFDF3] rounded-2xl py-[2px] hidden lg:flex font-medium px-[10px] text-[#027A48]" > savings</div>
                     </div>
                     <div>
-                        {banks.map((bank) => {
-                            if (bank.id === activeTab) {
-                                return (<div key={bank.id} className="font-semibold text-customblue text-xl ">{bank.savings}</div>)
-                            }
-                        })}
+                     
+             <div key={bank.id} className="font-semibold text-customblue text-xl ">{bank.savings}</div>
+                            
                     </div>
                 </div>
               
@@ -96,4 +104,5 @@ export default function Homepage() {
 
 
     </div>
+                    
 }

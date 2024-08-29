@@ -34,23 +34,24 @@ export default function Sidebar() {
 
 
 
-        <div className=" fixed left-0 top-0 lg:relative  flex-shrink-0  border-b-[1px]  border-r-[1px]" >
+        <div className=" items-stretch  left-0 z-50 top-0 lg:relative flex-shrink-0 " >
 
-            <div className="flex px-5 fixed left-0 top-3 lg:relative justify-between lg:pt-[32px] min-w-[12px]  " >
-                {!isOpen ? (<button onClick={() => { setIsOpen(true) }} ><Image src="/menu-icon.svg" width={30} height={30} alt="menu" /> </button>) :
-                    (<button onClick={() => { setIsOpen(false) }} ><Image src="/cross.svg" width={20} height={20} alt="cross" /></button>)}
+            
+                {!isOpen && <div className="py-2 px-5 "> <button className="rounded-full w-10 h-10 bg-black" onClick={() => { setIsOpen(true) }} ><Image className="invert p-2" src="/menu-icon.svg" width={40} height={40} alt="menu" /> </button></div>
+}
 
-            </div>
+          
 
             {isOpen &&
-                <div className={`  bg-white lg:bg-transparent lg:relative flex flex-col border-r-[#EAECF0] w-[200px]  md:w-[270px] pt-8 gap-6 `}  > {/* sidebar container  */}
+                <div className={`h-screen  bg-white lg:bg-transparent  rounded-2xl border-b-[1px]  border-r-[1px]  flex flex-col border-r-[#EAECF0] w-[250px]  md:w-[270px] pt-8 gap-6 `}  > {/* sidebar container  */}
 
 
 
 
-                    <div className="flex px-5 gap-1" >
+                    <div className="flex px-5 gap-1 justify-between items-center " >
                         <Image src="/logo.svg" width={33} height={32} alt="logo"></Image>
                         <p className="text-2xl lg:text-3xl font-bold font-serif" >Horizon</p>
+                       <div className=" pl-16 " > <button onClick={() => { setIsOpen(false) }} ><Image src="/cross.svg" width={15} height={15} alt="cross" /></button></div>
                     </div> {/*logo container ends here  */}
 
                     <div className="relative flex gap-2 px-[24px]" >

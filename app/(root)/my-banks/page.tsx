@@ -3,7 +3,7 @@ import { banks } from "@/app/utils/constant";
 
 export default function MyBanks() {
 
-    return  <div className=" py-[48px] px-[32px]  gap-[32px] flex flex-col w-full">
+    return  <div className=" py-[48px] px-[32px]  gap-[32px] flex flex-col w-full items-center lg:items-stretch ">
     <div className="flex flex-col  gap-5"> {/**heading and description */}
             <div className="flex font-semibold text-xl lg:text-3xl gap-2">
                 <div>   My Bank Accounts </div>
