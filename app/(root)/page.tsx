@@ -34,7 +34,7 @@ export default function Homepage() {
             </div>
         </div> {/**heading container ends */}
 
-        <div className="flex p-[24px] gap-6 border-[1px]  border-[#EAECF0] rounded-xl w-auto "> {/**rounded container */}
+        <div className="flex p-[24px] gap-6 border-[1px]  border-[#EAECF0] rounded-xl w-auto overflow-hidden "> {/**rounded container */}
             <div className="flex flex-col"> {/**pie chart container  */}
                 <Image src="/piechart.svg" width={120} height={120} alt="piechart" />
             </div>
