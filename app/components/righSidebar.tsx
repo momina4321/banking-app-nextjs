@@ -40,8 +40,8 @@ export default function RightSidebar() {
                             <div className="font-semibold text-base lg:text-lg" >My Banks</div>
                             <Link className="flex gap-3 text-customblue font-semibold  " href="" ><Image src="./plus.svg" width={20} height={20} alt="addicon" /><p className="hidden lg:block" >Add Bank</p> </Link>
                         </div>
-                   
-                   
+
+
                         <div className="flex flex-col lg:w-[400px] w-[200px]" >
                             <Image src="/Cards.svg" width={344} height={222} alt="cards" />
 
