@@ -1,23 +1,23 @@
-import type { Config } from "tailwindcss";
+import type { Config } from "tailwindcss"
 
 const config: Config = {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-  theme: {
-    extend: {
-     fontFamily:{
-      serif: ['IBM Plex Serif', 'serif'],
-     },
-     colors:{
-      'customGray': "#475467"
-
-     }
-    
+    content: [
+        "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+        "./components/**/*.{js,ts,jsx,tsx,mdx}",
+        "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    ],
+    theme: {
+        extend: {
+            fontFamily: {
+                serif: ['IBM Plex Serif', 'serif'],
+            },
+            colors: {
+                'customGray': "#475467",
+                'customblue': '#0179FE',
+            }
+        },
     },
-  },
-  plugins: [],
-};
-export default config;
+    plugins: [],
+}
+
+export default config
