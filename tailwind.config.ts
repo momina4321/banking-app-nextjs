@@ -1,22 +1,21 @@
 import { transform } from "next/dist/build/swc";
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config: Config = {
-    content: [
-        "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-        "./components/**/*.{js,ts,jsx,tsx,mdx}",
-        "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    ],
-    theme: {
-        extend: {
-            fontFamily: {
-                serif: ['IBM Plex Serif', 'serif'],
-            },
-            colors: {
-                'customGray': "#475467",
-                'customblue': '#0179FE',
-            },
-          
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {
+     fontFamily:{
+      serif: ['IBM Plex Serif', 'serif'],
+     },
+     colors:{
+      'customGray': "#475467",
+      'customblue':'#0179FE',
+     },
      animation: {
       'infinite-scroll-l': 'infinite-scroll-l 10s linear infinite',
       'infinite-scroll-r': 'infinite-scroll-r 10s linear infinite',
@@ -30,10 +29,10 @@ const config: Config = {
         from:{ transform: 'translateX(-50%)' },
         to: { transform: 'translateX(50)' }
       }
-        },
-
+    }                    
+    
     },
-    plugins: [],
-}
-
-export default config
+  },
+  plugins: [],
+};
+export default config;
