@@ -29,7 +29,7 @@ export default function Sidebar() {
     )
 
     return (
-        <div className="items-stretch left-0 z-50 top-0 lg:relative flex-shrink-0">
+        <div className=" fixed items-stretch left-0 z-50 top-0 lg:relative flex-shrink-0">
 
             {!isOpen
                 ? <div className="py-2 px-5">
