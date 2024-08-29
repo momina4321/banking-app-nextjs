@@ -11,7 +11,7 @@ const navlinks = [
     { name: 'My Banks', icon: '/dollar-circle.svg', href: "/my-banks" },
     { name: 'Transaction History', icon: '/receipt-item.svg', href: "/transaction-history" },
     { name: 'Payment Transfer', icon: '/money-send.svg', href: "/payment-transfer" },
-    { name: 'Connect Bank', icon: '/card-add.svg', href: "#" },
+    { name: 'Connect Bank', icon: '/card-add.svg', href: "/connect-bank" },
 ]
 
 export default function Sidebar() {
