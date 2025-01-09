@@ -8,7 +8,7 @@ export default function MyBanks() {
             <div className="flex font-semibold text-xl lg:text-3xl gap-2">
                 <div> My Bank Accounts </div>
             </div>
-            <div className="font-medium hidden lg:flex text-[16px] text-customGray">Access & manage your account and transactions efficiently.</div>
+            <div className="font-medium hidden lg:flex text-[16px] text-customGray dark:text-white">Access & manage your account and transactions efficiently.</div>
         </div>
 
         <div className="text-lg font-semibold">Your Cards</div>
@@ -16,7 +16,7 @@ export default function MyBanks() {
             {banks.map((bank, index) => (
                 <div key={index} className="flex flex-col gap-[16px]">
                     <Image src="/creditcard.svg" width={305} height={182} alt="card" />
-                    <div className="font-semibold text-lg text-customGray" >{bank.name} </div>
+                    <div className="font-semibold text-lg text-customGray dark:text-white" >{bank.name} </div>
                     <div className="flex justify-between gap-[16px]">Spending this month <div>{bank.savings}</div> </div>
                     <div className="w-full bg-[#D1E9FF] rounded-full h-2.5">
                         <div className="bg-[#175CD3] h-2.5 rounded-full w-[80%]"></div>

@@ -43,7 +43,7 @@ export default function Sidebar() {
                         <p className="text-2xl lg:text-3xl font-bold font-serif">Horizon</p>
                         <div className=" pl-16">
                             <button onClick={() => { setIsOpen(false) }}>
-                                <Image src="/cross.svg" width={15} height={15} alt="cross" />
+                                <Image src="/cross.svg" className="dark:invert" width={15} height={15} alt="cross" />
                             </button>
                         </div>
                     </div>

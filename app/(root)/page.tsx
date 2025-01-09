@@ -29,7 +29,7 @@ export default function Homepage() {
             <div className="flex font-semibold text-xl lg:text-3xl gap-2">
                 <div>   Welcome, </div><div className="text-customblue"> {user.fname} {user.lname} </div>
             </div>
-            <div className="font-medium  hidden lg:flex text-[16px] text-customGray">
+            <div className="font-medium  hidden lg:flex text-[16px] dark:text-white text-customGray">
                 Access & manage your account and transactions efficiently.
             </div>
         </div> {/**heading container ends */}
@@ -50,7 +50,7 @@ export default function Homepage() {
                     </div>
                 </div> {/** add banks container  */}
                 <div className="flex flex-col gap-2">
-                    <div className="flex text-customGray text-sm"> Total Current Balance</div>
+                    <div className="flex text-customGray text-sm dark:text-white"> Total Current Balance</div>
                     <div className="flex font-semibold text-xl lg:text-3xl">$2,698.12</div>
                 </div>
             </div>
@@ -63,11 +63,11 @@ export default function Homepage() {
             </div>
             <div className="flex gap-4 border-b-[1px] border-[#EAECF0]  ">
                 {banks.map((bank) => {
-                    return (<button key={bank.id} onClick={() => { banksinfo(bank) }} className={activeTab === bank.id ? "px-1 border-b-[3px] pb-[10px] border-customblue  text-customblue font-semibold text-[16px]" : "pb-[12px] px-1 text-customGray font-semibold text-[16px] "}  > {bank.name}  </button>)
+                    return (<button key={bank.id} onClick={() => { banksinfo(bank) }} className={activeTab === bank.id ? "px-1 border-b-[3px] pb-[10px] border-customblue  text-customblue font-semibold text-[16px]" : "pb-[12px] px-1 text-customGray dark:text-white font-semibold text-[16px] "}  > {bank.name}  </button>)
                 })}
             </div>
 
-            <div className="flex bg-[#F5FAFF] px-6 py-5 gap-[18px] rounded-lg overflow-hidden items-center">
+            <div className="flex bg-[#F5FAFF] dark:bg-[#0D1B2A] px-6 py-5 gap-[18px] rounded-lg overflow-hidden items-center">
                 <div className="flex flex-col">
                     <div className="rounded-[50%] bg-customblue text-white width-[40px] height-[40px] p-3">
                         <div className="font-semibold text-[16px]">  {bank.tag}</div>
@@ -77,7 +77,7 @@ export default function Homepage() {
 
                 <div className="flex flex-col gap-[7px]  w-full">
                     <div className="flex   justify-between">
-                        <div className="font-semibold text-[#194185] text-xl">{bank.name}</div>
+                        <div className="font-semibold text-[#194185] dark:text-white text-xl">{bank.name}</div>
                         <div className="bg-[#ECFDF3] rounded-2xl py-[2px] hidden lg:flex font-medium px-[10px] text-[#027A48]" > savings</div>
                     </div>
                     <div>

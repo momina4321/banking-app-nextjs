@@ -16,7 +16,7 @@ export default function TransactionHistory() {
                     <Dropdown bank={bank} setBank={setBank} />
                 </div>
             </div>
-            <div className="font-medium  hidden lg:flex text-[16px] text-customGray">Gain Insights and Track Your Transactions Over Time</div>
+            <div className="font-medium  hidden lg:flex text-[16px] text-customGray dark:text-white">Gain Insights and Track Your Transactions Over Time</div>
         </div>
 
         <div className={`flex flex-col md:flex-row p-[24px] gap-6 border-[1px] text-white rounded-xl ${bank.id === 1 ? "bg-customblue" : bank.id === 2 ? "bg-[#039855]" : "bg-[#D9569D]"}`}>
