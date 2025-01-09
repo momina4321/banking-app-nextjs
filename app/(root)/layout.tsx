@@ -4,6 +4,8 @@ import RightSidebar from "../components/righSidebar"
 import Sidebar from "../components/sidebar"
 import { getUser } from "../utils/auth"
 import { useRouter } from "next/navigation"
+import { ThemeProvider } from "next-themes"
+import ThemeToggle from "../components/ThemeToggle"
 
 export default function RootLayout({
     children,
@@ -30,13 +32,16 @@ export default function RootLayout({
 
     return (
         <div className="flex w-full">
-            <Sidebar />
-            <div className="flex w-full h-screen overflow-y-auto">
-                <div className=" w-full min-h-full">
-                    {children}
+            <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+                <Sidebar />
+                <div className="flex w-full h-screen overflow-y-auto">
+                    <div className=" w-full min-h-full">
+                        {children}
+                    </div>
+                    <RightSidebar />
                 </div>
-                <RightSidebar />
-            </div>
+                <ThemeToggle/>
+            </ThemeProvider>
         </div>
     )
 }
